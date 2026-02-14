@@ -98,3 +98,16 @@ rc0x4
 0x20000
 0
 ```
+
+### Broadcast and Multicast with ND jobs
+
+The ND format can already express **broadcast** and **multicast** traffic patterns by using
+strides:
+
+- **Broadcast** (one source block copied to many destinations): set `src_stride` to `0x0` and
+  use a non-zero `dst_stride`.
+- **Multicast** (one source block copied to a 2D/3D destination set): set `src_stride` to `0x0`
+  in multiple dimensions and use non-zero destination strides in those dimensions.
+
+Reference jobs are available in `jobs/4d_extension/broadcast.txt` and
+`jobs/4d_extension/multicast.txt`.
